@@ -17,5 +17,9 @@ public class Main {
 
         v.adicionar(5);
         System.out.println(v);
+        v.adicionar(6);
+        System.out.println(v);
+        v.adicionar(7);
+        System.out.println(v);
     }
 }
