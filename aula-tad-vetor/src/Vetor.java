@@ -19,34 +19,34 @@ public class Vetor {
 //     [1, 0, 3, 4, 0]
 //    quero adicionar o 5
 
-//    TODO implementar o aumento do vetor.
+    /**
+     * Adiciona um valor ao vetor na primeira posição vazia disponível. Caso o vetor já esteja cheio, aumenta esse vetor.
+     * @param _valor Valor a ser adicionado ao vetor
+     */
+//    TODO implementar o aumento do vetor = FEITO.
 //    +5, x2, ^2
     public void adicionar(int _valor){
-        elementos[ultima_posicao] = _valor;
-
-//        atualizar o indice da ultima_posicao
-//        se a proxima posicao nao estiver ocupada.
-        if(ultima_posicao == elementos.length - 1){
-            return;
-        }
-        if(elementos[ultima_posicao + 1] == 0) {
-            ultima_posicao = ultima_posicao + 1;
-        }else{
-            for (int i = 0; i < elementos.length; i++) {
-                if(elementos[i] == 0) {
-                    ultima_posicao = i;
-                    break;
-                }
+        for (int i = 0; i < elementos.length; i++) {
+            if (elementos[i] == 0) {
+                ultima_posicao = i;
+                break;
             }
         }
-//        senao procurar a proxima posicao desocupada.
 
-//        for (int i = 0; i < elementos.length; i++) {
-//            if(elementos[i] == 0){
-//                elementos[i] = _valor;
-//                break;
-//            }
-//        }
+        if (ultima_posicao == elementos.length - 1) {
+            if (elementos[ultima_posicao] == 0) elementos[ultima_posicao] = _valor;
+            else {
+                int[] aumentador = new int[elementos.length + 5]; // + 5
+                //int[] aumentador = new int[elementos.length * 2]; // * 2
+                //int[] aumentador = new int[elementos.length * elementos.length]; // ^2
+                for (int i = 0; i < elementos.length; i++) {
+                    aumentador[i] = elementos[i];
+                }
+                elementos = aumentador;
+                ultima_posicao++;
+            }
+        }
+        elementos[ultima_posicao] = _valor;
     }
 
     public void remover(int _indice){
@@ -64,7 +64,6 @@ public class Vetor {
 //        [0, 0, 0, 4, 0] => ultima_posicao = 2
 
     }
-
 
     @Override
     public String toString() {
