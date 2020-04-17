@@ -21,6 +21,19 @@ public class ListaTest {
     }
 
     @Test
+    public void testGet(){
+        Lista lista = new Lista();
+        Node n1 = new Node(1);
+        Node n2 = new Node(2);
+
+        lista.adicionar(n1);
+        lista.adicionar(n2);
+
+        assertEquals(n1, lista.get(0));
+        assertEquals(n2, lista.get(1));
+    }
+
+    @Test
     public void testInserirDoisElementos(){
         Lista lista = new Lista();
         Node n1 = new Node(1);
@@ -30,7 +43,7 @@ public class ListaTest {
         lista.adicionar(n2);
 
         assertEquals(2, lista.getTamanho());
-        assertEquals(n2, lista.get(2));
+        //assertEquals(n2, lista.get(2));
     }
 
 

@@ -23,11 +23,11 @@ public class Lista{
             return this.inicio;
         }else{
             Node aux = this.inicio;            
-            while(aux.getProximo() != null){
+            while(aux.getProximo() != null && _posicao != 0){
                 aux = aux.getProximo();
                 _posicao--;
             }
-            return null;
+            return aux;
         }
     }
 
