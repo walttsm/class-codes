@@ -22,7 +22,7 @@ public class Lista{
         if(_posicao == 0){
             return this.inicio;
         }else{
-            Node aux = this.inicio;            
+            Node aux = this.inicio;
             while(aux.getProximo() != null){
                 aux = aux.getProximo();
                 _posicao--;
