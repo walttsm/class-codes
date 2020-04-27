@@ -43,7 +43,7 @@ public class ListaTest {
         lista.adicionar(n2);
 
         assertEquals(2, lista.getTamanho());
-        //assertEquals(n2, lista.get(2));
+        assertEquals(n2, lista.get(2));
     }
 
 

@@ -5,15 +5,18 @@ public class Vetor {
     private int ultima_posicao;
 
     /**
-     * Construtor do nosso vetor. Recebe como parâmetro
-     * o tamanho do vetor a ser inicializado.
+     * Construtor do nosso vetor. Recebe como parâmetro o tamanho do vetor a ser
+     * inicializado.
      *
      * @param _tamanho
      */
-    public Vetor(int _tamanho){
+    public Vetor(int _tamanho) {
         this.elementos = new int[_tamanho];
     }
 
+    // [1, 2, 3, 4, 0]
+    // [1, 0, 3, 4, 0]
+    // quero adicionar o 5
 
 //     [1, 2, 3, 4, 0]
 //     [1, 0, 3, 4, 0]
@@ -49,26 +52,40 @@ public class Vetor {
         elementos[ultima_posicao] = _valor;
     }
 
-    public void remover(int _indice){
+    public void remover(int _indice) {
         elementos[_indice] = 0;
 
-        if(ultima_posicao > _indice){
+        if (ultima_posicao > _indice) {
             ultima_posicao = _indice;
         }
-//        atualizar o indice da ultima_posicao
-//
-//
-//        [1, 2, 3, 4, 0] => remove(1) | ultima_posicao = 4
-//        [1, 0, 3, 4, 0] => ultima_posicao = 1 => remove(0)
-//        [0, 0, 3, 4, 0] => ultima_posicao = 0 => remove(2)
-//        [0, 0, 0, 4, 0] => ultima_posicao = 2
+        // atualizar o indice da ultima_posicao
+        //
+        //
+        // [1, 2, 3, 4, 0] => remove(1) | ultima_posicao = 4
+        // [1, 0, 3, 4, 0] => ultima_posicao = 1 => remove(0)
+        // [0, 0, 3, 4, 0] => ultima_posicao = 0 => remove(2)
+        // [0, 0, 0, 4, 0] => ultima_posicao = 2
 
+    }
+
+    // [0,7,3,4,8]
+    /**
+     * Metodo para buscar um determinado valor no vetor. Retorna -1 caso nao
+     * encontre.
+     * 
+     * @param _valor
+     * @return retorna o indice do valor encontrado.
+     */
+    public int buscar(int _valor) {
+        for (int i = 0; i < elementos.length; i++) {
+            if (elementos[i] == _valor)
+                return i;
+        }
+        return -1;
     }
 
     @Override
     public String toString() {
-        return "Vetor{" +
-                "elementos=" + Arrays.toString(elementos) +
-                '}';
+        return "Vetor{" + "elementos=" + Arrays.toString(elementos) + '}';
     }
 }
