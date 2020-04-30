@@ -7,31 +7,41 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ListaTest {
-    @Test 
+    @Test
     public void testInserirUmElemento() {
-        //montar o cenário
-        Lista lista =  new Lista();
-        Node n1 = new Node(1);
+        // montar o cenário
+        Lista lista = new Lista();
 
         // faz a ação
-        lista.adicionar(n1);
+        lista.adicionar(1);
 
         // executa o teste
-        assertEquals(1, lista.getTamanho());        
+        assertEquals(1, lista.getTamanho());
     }
 
     @Test
-    public void testInserirDoisElementos(){
+    public void testInserirDoisElementos() {
         Lista lista = new Lista();
-        Node n1 = new Node(1);
-        Node n2 = new Node(2);
 
-        lista.adicionar(n1);
-        lista.adicionar(n2);
+        lista.adicionar(1);
+        lista.adicionar(2);
 
         assertEquals(2, lista.getTamanho());
-        assertEquals(n2, lista.get(2));
+        assertEquals(2, lista.get(1));
     }
 
+    @Test
+    public void testRemoverUmElemento() {
+        Lista lista = new Lista();
+        lista.adicionar(1);
+        lista.adicionar(2);
+        lista.adicionar(3);
+        lista.adicionar(4);
+
+        lista.remover(3);
+
+        assertEquals(3, lista.getTamanho());
+        assertEquals(4, lista.get(2));
+    }
 
 }
