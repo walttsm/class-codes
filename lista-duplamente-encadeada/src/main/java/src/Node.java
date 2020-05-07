@@ -4,6 +4,7 @@ public class Node {
 
     private int valor;
     private Node proximo;
+    private Node anterior;
 
     Node(int _valor) {
         this.valor = _valor;
@@ -26,6 +27,20 @@ public class Node {
      */
     public Node getProximo() {
         return proximo;
+    }
+
+    /**
+     * @return the anterior
+     */
+    public Node getAnterior() {
+        return anterior;
+    }
+
+    /**
+     * @param anterior the anterior to set
+     */
+    public void setAnterior(Node anterior) {
+        this.anterior = anterior;
     }
 
     /**
