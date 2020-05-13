@@ -44,12 +44,13 @@ public class Vetor {
                 //int[] aumentador = new int[elementos.length * elementos.length]; // ^2
                 for (int i = 0; i < elementos.length; i++) {
                     aumentador[i] = elementos[i];
-                }
                 elementos = aumentador;
                 ultima_posicao++;
+                }
             }
         }
         elementos[ultima_posicao] = _valor;
+        
     }
 
     public void remover(int _indice) {
